@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 def flatten(df, window):
   """
   Le das un df y te crea uno flatten con los rows con su lag de WINDOW
