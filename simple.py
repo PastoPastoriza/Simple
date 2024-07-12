@@ -12,6 +12,8 @@ def flatten(df, window):
       dfs.append(lagged_df)
   result_df = pd.concat(dfs, axis=1)
   return result_df
+
+
 from itertools import combinations
 
 def create_binary_features(data, features):
@@ -33,10 +35,3 @@ def create_binary_features(data, features):
         binary_df[f'{feat1}_gt_{feat2}'] = (data[feat1] > data[feat2]).astype(int)
 
     return binary_df
-
-# List of features to be compared
-binary_features =['open', 'high', 'low', 'close','upper_band',
-                  'lower_band', 'New_SMA', 'New_EMA']
-
-# Create binary features
-binary_df = create_binary_features(nas, binary_features)
